@@ -4,7 +4,7 @@
 
 namespace Eren {
 
-	class ERN_API Application
+	class EREN_API Application
 	{
 	public:
 		Application();
