@@ -1,3 +1,0 @@
-[submodule "Eren/3rdPartyLibs/spdlog"]
-	path = Eren/3rdPartyLibs/spdlog
-	url = https://github.com/gabime/spdlog
