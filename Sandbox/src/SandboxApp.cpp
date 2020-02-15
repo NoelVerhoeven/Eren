@@ -8,7 +8,6 @@ public:
 	~Sandbox() {
 
 	}
-
 };
 
 Eren::Application* Eren::createApplication() {
