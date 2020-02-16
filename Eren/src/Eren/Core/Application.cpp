@@ -1,12 +1,15 @@
 #include "erenpch.h"
 #include "Application.h"
-#include "Eren/Events/ApplicationEvent.h"
+
 #include "Eren/Core/Log.h"
 
 namespace Eren {
 
-	Application::Application() {
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
+	Application::Application() {
+		mWindow = Scope<Window>(Window::create());
+		mWindow->setEventCallback(BIND_EVENT_FN(Application::onEvent));
 	}
 
 	Application::~Application() {
@@ -14,8 +17,20 @@ namespace Eren {
 	}
 
 	void Application::run() {
-		WindowResizeEvent e(1200, 720);
-		EREN_TRACE(e);
-		while (true);
+		while (mRunning) {
+			mWindow->onUpdate();
+		}
 	}
+
+	void Application::onEvent(Event& e) {
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
+		EREN_CORE_TRACE("{0}",e);
+	}
+
+	bool Application::onWindowClose(WindowCloseEvent e) {
+		mRunning = false;
+		return true;
+	}
+
 }

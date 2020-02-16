@@ -1,23 +1,24 @@
 #pragma once
 
-#include "Event.h"
+#include "Eren/Events/Event.h"
+#include "Eren/Core/Input.h"
 
 namespace Eren {
 
-	class KeyEvent : public Event {
-	
+	class KeyEvent : public Event
+	{
 	public:
-		inline int getKeyCode() const { return mKeyCode; }
-		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
-	
-	protected:
-		KeyEvent(int keyCode) : mKeyCode(keyCode) {}
+		inline KeyCode GetKeyCode() const { return mKeyCode; }
 
-		int mKeyCode;
+		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
+	protected:
+		KeyEvent(KeyCode keycode)
+			: mKeyCode(keycode) {}
+
+		KeyCode mKeyCode;
 	};
 
-	class KeyPressedEvent : public KeyEvent
-	{
+	class KeyPressedEvent : public KeyEvent {
 	public:
 		KeyPressedEvent(KeyCode keycode, int repeatCount)
 			: KeyEvent(keycode), mRepeatCount(repeatCount) {}
@@ -51,10 +52,10 @@ namespace Eren {
 
 	class KeyTypedEvent : public KeyEvent {
 	public:
-		KeyTypedEvent(KeyCode keycode) : KeyEvent(keycode) {}
+		KeyTypedEvent(KeyCode keycode)
+			: KeyEvent(keycode) {}
 
-		std::string toString() const override
-		{
+		std::string toString() const override {
 			std::stringstream ss;
 			ss << "KeyTypedEvent: " << mKeyCode;
 			return ss.str();
@@ -62,6 +63,4 @@ namespace Eren {
 
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
-
-
 }

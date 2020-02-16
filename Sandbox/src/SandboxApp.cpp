@@ -1,4 +1,5 @@
 #include "Eren.h"
+#include "Eren/Core/EntryPoint.h"
 
 class Sandbox : public Eren::Application {
 public:

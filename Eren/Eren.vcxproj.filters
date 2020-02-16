@@ -4,28 +4,78 @@
     <Filter Include="Eren">
       <UniqueIdentifier>{0FD8847C-FB0E-860D-A4FB-6B109011020F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Eren\Core">
+      <UniqueIdentifier>{C75DC2EF-33C8-7666-7C06-280CE8AF54BB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Eren\Events">
+      <UniqueIdentifier>{13FDF2EE-7FB2-6BE4-08A7-65BB745B62E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Eren.h" />
-    <ClInclude Include="src\Eren\Application.h">
-      <Filter>Eren</Filter>
+    <ClInclude Include="src\Eren\Core\Application.h">
+      <Filter>Eren\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Eren\Core.h">
-      <Filter>Eren</Filter>
+    <ClInclude Include="src\Eren\Core\Core.h">
+      <Filter>Eren\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Eren\EntryPoint.h">
-      <Filter>Eren</Filter>
+    <ClInclude Include="src\Eren\Core\EntryPoint.h">
+      <Filter>Eren\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Eren\Log.h">
-      <Filter>Eren</Filter>
+    <ClInclude Include="src\Eren\Core\Input.h">
+      <Filter>Eren\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Eren\Core\KeyCodes.h">
+      <Filter>Eren\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Core\Log.h">
+      <Filter>Eren\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Core\MouseCodes.h">
+      <Filter>Eren\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Core\Window.h">
+      <Filter>Eren\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Events\ApplicationEvent.h">
+      <Filter>Eren\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Events\Event.h">
+      <Filter>Eren\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Events\KeyEvent.h">
+      <Filter>Eren\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Eren\Events\MouseEvent.h">
+      <Filter>Eren\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\erenpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Eren\Application.cpp">
-      <Filter>Eren</Filter>
+    <ClCompile Include="src\Eren\Core\Application.cpp">
+      <Filter>Eren\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Eren\Log.cpp">
-      <Filter>Eren</Filter>
+    <ClCompile Include="src\Eren\Core\Input.cpp">
+      <Filter>Eren\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Eren\Core\Log.cpp">
+      <Filter>Eren\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Eren\Core\Window.cpp">
+      <Filter>Eren\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\erenpch.cpp" />
   </ItemGroup>
 </Project>
